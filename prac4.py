@@ -10,8 +10,8 @@ def read_file():
     try:
         with open(file_name, 'r') as f:
             print(f.read())
-    except:
-        print(f'해당 파일을 찾을 수 없습니다.')
+    except FileNotFoundError:
+        print(f'{file_name}: 해당 파일을 찾을 수 없습니다.')
 
 if __name__ == "__main__":
     read_file()
