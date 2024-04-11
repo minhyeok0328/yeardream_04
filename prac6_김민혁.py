@@ -11,29 +11,18 @@ class Character:
         return self.health > 0
 
     def attack(self, other):
-        raise NotImplementedError("Subclasses must implement this method.")
+        damage = random.randint(5, 20)
+        other.health -= damage
+
+        print(f"{self.name} attacks {other.name} for {damage} damage. {other.name} now has {other.health} health.")
 
 class Player(Character):
     def __init__(self, name, health=100):
-        self.name = name
-        self.health = health
-
-    def attack(self, other):
-        damage = random.randint(5, 20)
-        other.health -= damage
-
-        print(f"{self.name} attacks {other.name} for {damage} damage. {other.name} now has {other.health} health.")
+        super().__init__(name, health)
 
 class Monster(Character):
-    def __init__(self, name, health=50):
-        self.name = name
-        self.health = health
-
-    def attack(self, other):
-        damage = random.randint(5, 20)
-        other.health -= damage
-
-        print(f"{self.name} attacks {other.name} for {damage} damage. {other.name} now has {other.health} health.")
+    def __init__(self, name, health=100):
+        super().__init__(name, health)
 
 def game_loop():
     player = Player("Hero")
