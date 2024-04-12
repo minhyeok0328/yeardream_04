@@ -7,7 +7,7 @@ class Zoo:
     def add_animal(self, new_animal):
         for animal in self.animals:
             if animal.name == new_animal.name and animal.species == new_animal.species:
-                print(f'{new_animal.name} the {new_animal.species}는 이미 동물원에 있습니다. 다른 이름을 사용하거나, 다른 종으로 추가해주세요.')
+                print(f'{new_animal.name} the {new_animal.species}는 이미 동물원에 있습니다. 다른 이름을 사용하거나, 다른 종으로 추가해주세요.dd')
                 return
 
         self.animals.append(new_animal)
@@ -41,7 +41,7 @@ class Animal:
         self.species = species
 
 def main():
-    # 동물원을 선언하고 10마리의 동물들을 추가합니다.
+    # 동물원을 선언하고 10마리의 동물들을 추가합니다. 합니다.
     zoo = Zoo()
     zoo.add_animal(Animal("Leo", "Lion"))
     zoo.add_animal(Animal("Harry", "Hippo"))
